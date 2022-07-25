@@ -1,0 +1,1 @@
+[{"title":"Monitor","price":50000,"thumbnail":"https://www.fullh4rd.com.ar/img/productos/Pics_Prod/monitor-24-lg-gamer-24gn600b-144hz-0.jpg","id":1},{"title":"Teclado redragon","price":12000,"thumbnail":"https://www.newmaster.com.ar/wp-content/uploads/2020/01/K552W-RGB-SP-1.jpg","id":2}]
