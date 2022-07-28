@@ -1,3 +1,3 @@
 # Desafíos de NODEJS
 
-## Desafío: Usando el objeto process
+## Desafío: Servidor con balance de carga
