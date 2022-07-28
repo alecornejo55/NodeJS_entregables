@@ -56,6 +56,9 @@
             <div class="col-md-4 offset-md-2">
                 Memoria total reservada (rss): <span id="memTot"></span>
             </div>
+            <div class="col-md-4">
+                Número de procesadores: <span id="numCPUs"></span>
+            </div>
         </div>
     </div>
     <script
@@ -79,7 +82,8 @@
                 proc,
                 vNode,
                 folder,
-                memTot
+                memTot,
+                numCPUs
             } = await fetch('/info', settings).then(res => res.json());
             document.getElementById('argE').innerHTML = argE;
             document.getElementById('path').innerHTML = path;
@@ -88,6 +92,7 @@
             document.getElementById('vNode').innerHTML = vNode;
             document.getElementById('folder').innerHTML = folder;
             document.getElementById('memTot').innerHTML = memTot;
+            document.getElementById('numCPUs').innerHTML = numCPUs;
         }
         getInfo();
     </script>

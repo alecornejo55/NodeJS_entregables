@@ -3,6 +3,7 @@ const { Router } = express;
 const router = Router();
 const path = require("path");
 const { send } = require('process');
+const numCPUs = require('os').cpus().length;
 
 
 router.get('/', (req, res) => {
@@ -17,6 +18,7 @@ router.post('/',(req, res) => {
     const vNode = process.version;
     const folder = process.cwd();
     const memTot = process.memoryUsage().rss;
-    res.send({argE, path, plat, proc, vNode, folder, memTot});
+
+    res.send({argE, path, plat, proc, vNode, folder, memTot, numCPUs});
 });
 module.exports = router;
