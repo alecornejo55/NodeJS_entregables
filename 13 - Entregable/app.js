@@ -24,6 +24,7 @@ const testRoute = require('./src/routes/test');
 const fakerRoute = require('./src/routes/faker');
 const indexRoute = require('./src/routes/index');
 const infoRoute = require('./src/routes/info');
+const apiRoute = require('./src/routes/api');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -52,6 +53,7 @@ app.use(express.static(__dirname + "/src/public"));
 app.use('/api/productos-test', testRoute);
 app.use('/test', fakerRoute);
 app.use('/info', infoRoute);
+app.use('/api', apiRoute);
 
 const startServer = () => {
     httpServer.listen(puerto, () => {
