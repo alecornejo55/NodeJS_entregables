@@ -1,3 +1,3 @@
-# Entrega final del proyecto de NODE JS
+# Desafíos de NODEJS
 
-## Segunda pre entrega
+## Desafío: Mejorar la arquitectura de nuestra API
