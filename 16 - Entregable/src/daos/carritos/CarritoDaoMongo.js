@@ -2,11 +2,18 @@ const { ContainerMongo } = require('../../containers/containerMongo');
 const { ProductDaoMongo } = require('../productos/ProductoDaoMongo');
 
 const carrito = require('../../models/carrito');
-
+let app = null;
 class CarritoDaoMongo extends ContainerMongo {
     constructor(){
         super(carrito);
     }
+    static getInstance() {
+        if (!app) {
+            app = new CarritoDaoMongo();
+        }
+        return app;
+    }
+
     async addProduct(idCarrito, productos) {
         try {
             const producto = new ProductDaoMongo();

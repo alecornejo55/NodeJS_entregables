@@ -75,7 +75,7 @@ const deleteProduct = async (req, res) => {
 
         await cartService.deleteProduct(idCarrito, idProd);
 
-        res.send({message: "Producto actualizado"});
+        res.send({message: "Producto eliminado del carrito"});
     } catch (error) {
         res.send({error: error.message})
     }

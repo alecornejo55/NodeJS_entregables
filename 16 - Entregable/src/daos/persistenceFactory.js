@@ -6,16 +6,20 @@ class PersistenceFactory {
         let CartDao;
         switch (config.app.persistence) {
             case 'mongo':
-                let { ProductDaoMongo } = require('./productos/ProductoDaoMongo');
-                let { CarritoDaoMongo } = require('./carritos/CarritoDaoMongo');
-                ProductDao = new ProductDaoMongo();
-                CartDao = new CarritoDaoMongo();
+                const { ProductDaoMongo } = require('./productos/ProductoDaoMongo');
+                const { CarritoDaoMongo } = require('./carritos/CarritoDaoMongo');
+                ProductDao = ProductDaoMongo.getInstance();
+                // ProductDao = new ProductDaoMongo();
+                CartDao = CarritoDaoMongo.getInstance();
                 return { ProductDao, CartDao };
             case 'firestore':
-                let { ProductDaoFirestore } = require('./productos/ProductoDaoFirestore');
-                let { CarritoDaoFirestore } = require('./carritos/CarritoDaoFirestore');
-                ProductDao = new ProductDaoFirestore();
-                CartDao = new CarritoDaoFirestore();
+                const { ProductDaoFirestore } = require('./productos/ProductoDaoFirestore');
+                const { CarritoDaoFirestore } = require('./carritos/CarritoDaoFirestore');
+                ProductDao = ProductDaoFirestore.getInstance();
+                CartDao = CarritoDaoFirestore.getInstance();
+
+                // ProductDao = new ProductDaoFirestore();
+                // CartDao = new CarritoDaoFirestore();
                 return { ProductDao, CartDao };
         }
     }

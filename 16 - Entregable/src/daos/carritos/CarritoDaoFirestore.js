@@ -1,9 +1,16 @@
 const { ContainerFirestore } = require('../../containers/ContainerFirestore')
 const { ProductDaoFirestore } = require('../productos/ProductoDaoFirestore');
 
+let app = null;
 class CarritoDaoFirestore extends ContainerFirestore {
     constructor() {
         super('carrito');
+    }
+    static getInstance() {
+        if (!app) {
+            app = new CarritoDaoFirestore();
+        }
+        return app;
     }
     async addProduct(idCarrito, productos) {
         try {
